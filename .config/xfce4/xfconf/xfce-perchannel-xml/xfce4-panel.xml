@@ -99,6 +99,7 @@
         <value type="string" value="networkmanager applet"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="discord1"/>
         <value type="string" value="variety"/>
       </property>
     </property>
@@ -110,7 +111,7 @@
     </property>
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="firefox.instance8779;pragha;spotify"/>
+      <property name="mpris-players" type="string" value="firefox.instance1496;firefox.instance1865;firefox.instance8779;pragha;spotify"/>
     </property>
   </property>
 </channel>

@@ -15,7 +15,7 @@ set undodir=~/.vim/undodir
 set undofile
 set incsearch
 set scrolloff=8
-set noshowmode
+set showmode
 set completeopt=menuone,noinsert,noselect
 set signcolumn=yes
 set cmdheight=2
