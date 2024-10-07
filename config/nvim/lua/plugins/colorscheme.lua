@@ -2,14 +2,22 @@ return {
     {
         "LazyVim/LazyVim",
         opts = {
-            colorscheme = "embark"
-        }
-    },
-
-    {
-        "ellisonleao/gruvbox.nvim"
+            colorscheme = "kanagawa-paper",
+        },
     },
     {
-        "embark-theme/vim"
+        "ellisonleao/gruvbox.nvim",
+    },
+    {
+        "embark-theme/vim",
+    },
+    {
+        "nyoom-engineering/oxocarbon.nvim",
+    },
+    {
+        "EdenEast/nightfox.nvim",
+    },
+    {
+        "sho-87/kanagawa-paper.nvim"
     }
 }
