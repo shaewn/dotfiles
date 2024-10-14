@@ -117,3 +117,4 @@ export PATH=$PATH:/home/seanm/.local/bin:/home/seanm/.config/emacs/bin
 
 unsetopt HIST_VERIFY
 
+alias nvimdiff="nvim -d"
