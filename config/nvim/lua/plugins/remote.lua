@@ -6,11 +6,33 @@ return {
         "MunifTanjim/nui.nvim", -- To build the plugin UI
         "nvim-telescope/telescope.nvim", -- For picking b/w different remote methods
     },
-    config = true,
+    keys = {
+        {
+            "<leader>rs",
+            "<cmd>RemoteStart<cr>",
+            desc = "Start Remote Connection",
+        },
+        {
+            "<leader>rS",
+            "<cmd>RemoteStop<cr>",
+            desc = "Stop Remote Connection",
+        },
+        {
+            "<leader>ri",
+            "<cmd>RemoteInfo<cr>",
+            desc = "Info About Current Remote Connection",
+        },
+        {
+            "<leader>rc",
+            "<cmd>RemoteCleanup<cr>",
+            desc = "Cleanup Remote Config",
+        },
+        { "<leader>rl", "<cmd>RemoteLog<cr>", desc = "View Remote Log" },
+    },
     opts = {
         client_callback = function(port, workspace_config)
-            local cmd = ("kitty @ launch --to=$KITTY_LISTEN_ON --type=tab --title='%s' -- nvim --server localhost:%s --remote-ui"):format(
-                ("Remote: %s"):format(workspace_config.host),
+            local cmd = ("kitty @ launch --to=$KITTY_LISTEN_ON --type=tab --title='Remote: %s' -- nvim --server localhost:%s --remote-ui"):format(
+                workspace_config.host,
                 port
             )
 
