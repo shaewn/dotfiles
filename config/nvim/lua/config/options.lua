@@ -9,7 +9,10 @@ vim.o.shiftwidth = 4 -- Number of spaces inserted when indenting
 
 vim.g.autoformat = false
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
-vim.opt.scrolloff = 8
+vim.o.hlsearch = false
+vim.o.incsearch = true
+vim.o.scrolloff = 8
 vim.g.snacks_animate = false
+
+vim.g.zig_fmt_parse_errors = 0
+vim.g.zig_fmt_autosave = 0
