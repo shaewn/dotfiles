@@ -2,7 +2,7 @@ return {
     {
         "LazyVim/LazyVim",
         opts = {
-            colorscheme = "carbonfox",
+            colorscheme = "dracula",
         },
     },
     {
@@ -18,6 +18,9 @@ return {
         "EdenEast/nightfox.nvim",
     },
     {
-        "sho-87/kanagawa-paper.nvim"
-    }
+        "sho-87/kanagawa-paper.nvim",
+    },
+    {
+        "Mofiqul/dracula.nvim",
+    },
 }
