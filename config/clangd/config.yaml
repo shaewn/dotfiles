@@ -1,1 +1,4 @@
-HeaderInsertion: Never
+If:
+  PathMatch: .*
+  Completion:
+    HeaderInsertion: Never
