@@ -117,11 +117,42 @@ vim.keymap.set("n", "<leader>d-", dirfn(
   function() popdir() end
 ), { desc = "goto previous directory" })
 
+vim.keymap.set("n", "<leader>dt", dirfn(
+  function()
+    local dir = vim.fn.input("Go to directory: ", "", "dir")
+    pushdir(dir)
+  end
+), { desc = "goto named directory" })
+
+vim.keymap.set("n", "<leader>d..", dirfn(
+  function()
+    pushdir("..")
+  end
+), { desc = "goto parent directory" })
+
 vim.keymap.set("n", "<leader>d+", dirfn(
   function() unpopdir() end
 ), { desc = "`undo'" })
 
+vim.keymap.set("n", "<leader>dc", function()
+  dir_stack = {}
+  print("Directory stack cleared!")
+end, { desc = "clear the directory stack" })
+
 -- Print
-vim.keymap.set("n", "<leader>pd", dirfn(
-  function() vim.cmd.pwd() end
+vim.keymap.set("n", "<leader>pwd", dirfn(
+  function() end
 ), { desc = "pwd" })
+
+vim.keymap.set("n", "<leader>pds", function()
+  vim.print(dir_stack)
+end, { desc = "print directory stack" })
+
+vim.keymap.set("n", "<leader>pps", function()
+  vim.print(popped_dirs_stack)
+end, { desc = "print popped dirs stack" })
+
+-- UI
+vim.keymap.set("n", "<leader>ut", function()
+  MiniFiles.open()
+end, { desc = "open file tree (mini.files)" })
