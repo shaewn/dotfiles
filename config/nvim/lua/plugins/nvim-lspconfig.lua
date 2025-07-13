@@ -46,6 +46,9 @@ return {
         },
       },
 
+      gdscript = {
+      },
+
       rust_analyzer = {
       },
 
