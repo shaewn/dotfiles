@@ -111,6 +111,10 @@ export EDITOR='nvim'
 alias clera=clear
 alias claer=clear
 alias clsb="printf '\033[2J\033[3J\033[1;1H'"
+alias cat=bat
+alias man=batman
+alias diff=batdiff
+alias ls=eza
 
 [ -f "/home/seanm/.ghcup/env" ] && source "/home/seanm/.ghcup/env" # ghcup-env
 
