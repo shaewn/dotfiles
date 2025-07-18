@@ -112,7 +112,6 @@ alias clera=clear
 alias claer=clear
 alias clsb="printf '\033[2J\033[3J\033[1;1H'"
 alias cat=bat
-alias man=batman
 alias diff=batdiff
 alias ls=eza
 
@@ -130,3 +129,4 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="/opt/homebrew/opt/binutils/bin:$PATH"
 
 export CODE_DIR="$HOME/code"
+export MANPAGER="nvim +Man!"
