@@ -27,6 +27,7 @@ vim.keymap.set("n", "<leader>wj", "<C-w>J")
 
 -- Buffer keys
 vim.keymap.set("n", "<leader>bd", ":bd<CR>")
+vim.keymap.set("n", "<leader>bo", ":%bd|e#|bd#<CR>", { desc = "buffer equivalent of <leader>wo" })
 vim.keymap.set("n", "<leader>,", ":bp<CR>")
 vim.keymap.set("n", "<leader>;", ":bn<CR>")
 
@@ -183,6 +184,10 @@ end, { desc = "print directory stack" })
 vim.keymap.set("n", "<leader>pfs", function()
   vim.print(from_dir_stack)
 end, { desc = "print popped dirs stack" })
+
+vim.keymap.set("n", "<leader>pfd", function()
+  vim.print(vim.fn.expand("%:h"))
+end, { desc = "print the parent directory of the current file" })
 
 -- UI
 local function mini_files()
