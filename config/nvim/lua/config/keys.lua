@@ -25,11 +25,16 @@ vim.keymap.set("n", "<leader>wh", "<C-w>H")
 vim.keymap.set("n", "<leader>wk", "<C-w>K")
 vim.keymap.set("n", "<leader>wj", "<C-w>J")
 
+function telescope_buffers()
+    require("telescope.builtin").buffers({
+      sort_mru = true,
+    })
+end
+
 -- Buffer keys
 vim.keymap.set("n", "<leader>bd", ":bd<CR>")
 vim.keymap.set("n", "<leader>bo", ":%bd|e#|bd#<CR>", { desc = "buffer equivalent of <leader>wo" })
-vim.keymap.set("n", "<leader>,", ":bp<CR>")
-vim.keymap.set("n", "<leader>;", ":bn<CR>")
+vim.keymap.set("n", "<leader>,", telescope_buffers, { desc = "Telescope buffers" })
 
 -- Cursor motion
 vim.keymap.set("n", "j", "gj")
@@ -52,14 +57,7 @@ vim.keymap.set("n", "<leader>l", "<cmd>Lazy<CR>")
 -- Telescope (Basic)
 vim.keymap.set("n", "<leader>.", "<cmd>Telescope find_files<CR>")
 vim.keymap.set("n", "<leader>tB", "<cmd>Telescope builtin<CR>")
-vim.keymap.set("n", "<leader>t,",
-  function()
-    require("telescope.builtin").buffers({
-      sort_mru = true,
-    })
-  end,
-  { desc = "Telescope buffers" }
-)
+vim.keymap.set("n", "<leader>t,", telescope_buffers, { desc = "Telescope buffers" })
 vim.keymap.set("n", "<leader>tg", "<cmd>Telescope git_files<CR>")
 vim.keymap.set("n", "<leader>t/", "<cmd>Telescope live_grep<CR>")
 
