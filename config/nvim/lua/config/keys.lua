@@ -3,6 +3,13 @@
 vim.keymap.set("n", "<leader><leader>x", "<cmd>source %<CR>")
 vim.keymap.set("v", "<leader>x", ":lua<CR>")
 
+--Writing and quitting
+vim.keymap.set("n", "<leader>qq", ":qa!<CR>", { desc = "Soft quit" })
+vim.keymap.set("n", "<leader>qf", ":qa<CR>", { desc = "Hard/force quit" })
+vim.keymap.set("n", "<leader>wqq", ":wqa<CR>", { desc = "Write all then quit (no bang)" })
+vim.keymap.set("n", "<leader>wqq", ":wqa!<CR>", { desc = "Write all then quit (with bang)" })
+vim.keymap.set("n", "<leader>wa", ":wa<CR>", { desc = "Write all" })
+
 -- Split sizing
 vim.keymap.set("n", "<leader>w.", "5<C-w>>")
 vim.keymap.set("n", "<leader>w,", "5<C-w><")
@@ -159,16 +166,35 @@ vim.keymap.set("n", "<leader>dt", dirfn(
   end
 ), { desc = "goto named directory" })
 
+vim.keymap.set("n", "<leader>dH", dirfn(
+  function()
+    local homedir = vim.env.HOME
+    return pushdir(homedir)
+  end
+), { desc = "Enter user home directory" })
+
+vim.keymap.set("n", "<leader>dC", dirfn(
+  function()
+    local confdir = vim.fn.stdpath("config")
+    return pushdir(confdir)
+  end
+), { desc = "Enter user neovim config" })
+
 vim.keymap.set("n", "<leader>d..", dirfn(
   function()
     pushdir("..")
   end
 ), { desc = "goto parent directory" })
 
-vim.keymap.set("n", "<leader>dc", function()
+vim.keymap.set("n", "<leader>dcd", function()
   dir_stack = {}
   print("Directory stack cleared!")
 end, { desc = "clear the directory stack" })
+
+vim.keymap.set("n", "<leader>dcf", function()
+  from_dir_stack = {}
+  print("Directory from stack cleared!")
+end, { desc = "clear the directory from stack" })
 
 -- Print
 vim.keymap.set("n", "<leader>pwd", dirfn(
