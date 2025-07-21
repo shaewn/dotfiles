@@ -38,7 +38,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "gd", function() require("telescope.builtin").lsp_definitions() end, tbl("Goto Definition"))
     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, tbl("Goto Declaration"))
     vim.keymap.set("n", "gy", function() require("telescope.builtin").lsp_type_definitions() end, tbl("Goto Type Definition"))
-    vim.keymap.set("n", "gr", function() require("telescope.builtin").lsp_references() end, tbl("Goto References"))
+    vim.keymap.set("n", "grr", function() require("telescope.builtin").lsp_references() end, tbl("Goto References"))
     vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, tbl("Code Rename"))
     vim.keymap.set("n", "K", vim.lsp.buf.hover, tbl("Hover"))
     -- vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help, tbl("Signature Help"))
