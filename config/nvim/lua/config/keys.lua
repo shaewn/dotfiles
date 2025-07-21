@@ -65,6 +65,7 @@ vim.keymap.set("n", "<leader>l", "<cmd>Lazy<CR>")
 vim.keymap.set("n", "<leader>.", "<cmd>Telescope find_files<CR>")
 vim.keymap.set("n", "<leader>tB", "<cmd>Telescope builtin<CR>")
 vim.keymap.set("n", "<leader>t,", telescope_buffers, { desc = "Telescope buffers" })
+vim.keymap.set("n", "<leader>tm", "<cmd>Telescope man_pages<CR>")
 vim.keymap.set("n", "<leader>tg", "<cmd>Telescope git_files<CR>")
 vim.keymap.set("n", "<leader>t/", "<cmd>Telescope live_grep<CR>")
 
