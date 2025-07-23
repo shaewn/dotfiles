@@ -198,6 +198,19 @@ vim.keymap.set("n", "<leader>dcf", function()
   print("Directory from stack cleared!")
 end, { desc = "clear the directory from stack" })
 
+vim.keymap.set("n", "<leader>dcn", dirfn(function()
+  local new_dir = vim.fn.input("Create new directory: ")
+  local status, err = pcall(vim.fn.mkdir, new_dir, 'p')
+
+  if status then
+    pushdir(new_dir)
+  else
+    vim.print(err)
+  end
+
+  return status
+end), { desc = "create and move to new directory" })
+
 -- Print
 vim.keymap.set("n", "<leader>pwd", dirfn(
   function() end
