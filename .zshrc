@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/usr/local/opt/make/libexec/gnubin:$HOME/.local/bin:$PATH
+export PATH
+PATH=/usr/local/opt/make/libexec/gnubin:$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -89,8 +90,6 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
-export alias runemacs'=emacsclient -ca='
-
 export EDITOR='nvim'
 
 # Compilation flags
@@ -117,16 +116,14 @@ alias ls=eza
 
 [ -f "/home/seanm/.ghcup/env" ] && source "/home/seanm/.ghcup/env" # ghcup-env
 
-export PATH=$PATH:/home/seanm/.local/bin:/home/seanm/.config/emacs/bin
+PATH=$PATH:/home/seanm/.local/bin:/home/seanm/.config/emacs/bin
 
 unsetopt HIST_VERIFY
 
 alias nvimdiff="nvim -d"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export PATH="/opt/homebrew/opt/binutils/bin:$PATH"
+# TODO: Move this to a device local file.
+PATH="/opt/homebrew/opt/binutils/bin:$PATH"
 
 export CODE_DIR="$HOME/code"
 export MANPAGER="nvim +Man!"
