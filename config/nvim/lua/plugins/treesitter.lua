@@ -5,7 +5,7 @@ return {
   build = ":TSUpdate",
   opts = {
     ensure_installed = {
-      "c", "cpp", "bash", "zig", "rust", "swift", "java", "javascript",
+      "c", "cpp", "bash", "zig", "rust", "java", "javascript",
       "glsl", "hlsl", "lua", "vim", "vimdoc", "query", "markdown",
       "markdown_inline", "json", "yaml"
     },
