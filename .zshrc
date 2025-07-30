@@ -126,4 +126,5 @@ alias nvimdiff="nvim -d"
 PATH="/opt/homebrew/opt/binutils/bin:$PATH"
 
 export CODE_DIR="$HOME/code"
-export MANPAGER="nvim +Man!"
+# export MANPAGER="nvim +Man!"
+alias man=batman
