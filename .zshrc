@@ -128,3 +128,5 @@ PATH="/opt/homebrew/opt/binutils/bin:$PATH"
 export CODE_DIR="$HOME/code"
 # export MANPAGER="nvim +Man!"
 alias man=batman
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
