@@ -115,8 +115,8 @@ alias ls=eza
 
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
 
-# Prioritize local binaries.
-PATH=$HOME/.local/bin:$PATH
+# Prioritize local binaries, unprioritize cwd
+PATH=$HOME/.local/bin:$PATH:.
 
 unsetopt HIST_VERIFY
 
