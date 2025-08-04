@@ -1,7 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH
-PATH=/usr/local/opt/make/libexec/gnubin:$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -90,7 +89,7 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
-export EDITOR='nvim'
+export EDITOR=nvim
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -105,7 +104,7 @@ export EDITOR='nvim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # opam configuration
-[[ ! -r /home/seanm/.opam/opam-init/init.zsh ]] || source /home/seanm/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+[[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 alias clera=clear
 alias claer=clear
@@ -114,19 +113,19 @@ alias cat=bat
 alias diff=batdiff
 alias ls=eza
 
-[ -f "/home/seanm/.ghcup/env" ] && source "/home/seanm/.ghcup/env" # ghcup-env
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
 
-PATH=$PATH:/home/seanm/.local/bin:/home/seanm/.config/emacs/bin
+# Prioritize local binaries.
+PATH=$HOME/.local/bin:$PATH
 
 unsetopt HIST_VERIFY
 
 alias nvimdiff="nvim -d"
 
-# TODO: Move this to a device local file.
-PATH="/opt/homebrew/opt/binutils/bin:$PATH"
+[[ -d /opt/homebrew ]] && PATH=/opt/homebrew/opt/binutils/bin:$PATH
 
-export CODE_DIR="$HOME/code"
-# export MANPAGER="nvim +Man!"
-alias man=batman
+[[ -f /home/linuxbrew/.linuxbrew/bin/brew ]] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+export CODE_DIR=$HOME/code
+
+export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
